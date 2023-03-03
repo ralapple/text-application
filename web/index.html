@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="./CSS/main.css">
+<script src="./js/index.js"></script>
+
+
+<h1>Text</h1>
+<body>
+    <form>
+        <label for="message">Send to:</label><br>
+        <input type="text" id="toNumber"><br>
+        <label for="text">Message:</label><br>
+        <input type="text" id="message" name="message"><br>
+        <input type="button" onclick="submit_data()" value="Send">
+    </form>
+    <div id="contacts">
+        <h2>Contacts</h2>
+    </div>
+
+    <form>
+        <label for="fname">First Name</label><br>
+        <input type="fname" id="fname"><br>
+        <label for="lname">Last Name</label><br>
+        <input type="text" id="lname"><br>
+        <label for="phoneNumber">Phone Number</label><br>
+        <input type="number" id="phoneNumber"><br>
+        <input type="submit" value="Add Contact" onclick="add_contact()">
+
+    </form>
+</body>
+</html>
+    

@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: net.lyonfamily
+testFramework: spock
+sourceLanguage: java
+buildTool: gradle
+features: [annotation-api, app-name, github-workflow-ci, gradle, http-client, java, java-application, management, micronaut-build, netty-server, openapi, readme, serialization-jackson, shade, slf4j-simple, spock, swagger-ui, yaml]

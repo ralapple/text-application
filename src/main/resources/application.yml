@@ -1,0 +1,63 @@
+micronaut:
+  application:
+    name: text-example
+  heartbeat:
+    enabled: true
+  server:
+    port: 8200
+    cors:
+      enabled: true
+      configurations:
+        web:
+          allowedOrigins:
+            - http://localhost:8080
+          allowedHeaders:
+            - Content-Type
+          allowedMethods:
+            - POST
+            - GET
+            - OPTIONS
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
+
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+    details-visible: ANONYMOUS
+    id: health
+    discovery-client:
+      enabled: false
+  beans:
+    enabled: true
+    sensitive: false
+  info:
+    enabled: true
+    sensitive: false
+    details-visible: ANONYMOUS
+    id: info
+  loggers:
+    enabled: true
+    sensitive: false
+  metrics:
+    enabled: true
+    sensitive: false
+  routes:
+    enabled: true
+    sensitive: false
+  env:
+    enabled: true
+    sensitive: false
+  threaddump:
+    enabled: true
+    sensitive: false
+
+info:
+  application-yml: true
+  final-yml: application-yml
