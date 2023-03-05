@@ -13,30 +13,40 @@ public class UserRequest {
     private String phoneNumber;
     private int userID;
 
+    public UserRequest(String fname, String lname, String phoneNumber){
+        this.fname = fname;
+        this.lname =lname;
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
     public void setNumber(String number) {
-        this.phoneNumber = number;
+        if (number != null && number.length() >=10){
+            this.phoneNumber = number;
+        }
+
     }
 
     public String getFname() {
         return fname;
     }
 
-    public int setFname(String name) {
+    public void setFname(String name) {
         if(name != null){
             this.fname = name;
-            return 1;
-
         }
-        return 0;
     }
 
     public String getLname(){return lname;}
 
-    public void setLname(String lastName){lname =lastName;}
+    public void setLname(String lastName){
+        if (lastName != null){
+            lname =lastName;
+        }
+    }
 
 
 

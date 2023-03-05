@@ -6,42 +6,42 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserRequestTest {
-
-    public String fname = "Dan";
+    public String fname = "mike";
     public String lname = "doe";
     public String phoneNumber = "17636451112";
-    UserRequest u1 = new UserRequest();
+    UserRequest u1 = new UserRequest(fname,lname, phoneNumber);
 
 
 
     @Test
-    void setFNameToValidName(){ // Tests setting a valid name
-        assertEquals(1,u1.setFname("Dan"));
-    }
+    void settingInvalidfName(){
+        //Trying to set a null first name
+        u1.setFname(null);
 
-    @Test
-    void setNullFname(){ //Tries setting an invalid name
-        assertEquals(0,u1.setFname(null));
-    }
-    @Test
-    void checkGetfname() {
-        u1.setFname(fname);
+        // fnames should be the same since the name isnt updated
         assertEquals(0,u1.getFname().compareTo(fname));
     }
 
 
     @Test
-    void testGetLname(){
-        u1.setLname(lname);
+    void settingInvalidlName(){
+        //Trying to set a null last name
+        u1.setLname(null);
+
+        // lnames should be the same since the name isnt updated
         assertEquals(0,u1.getLname().compareTo(lname));
-
-
     }
 
     @Test
-    void testGetPhoneNumber() {
-        u1.setNumber(phoneNumber);
-        assertEquals(0, u1.getPhoneNumber().compareTo(phoneNumber));
+    void setNullNumber() {
+        u1.setNumber(null);
+        assertEquals(0,u1.getPhoneNumber().compareTo(phoneNumber));
+    }
+
+    @Test
+    void setTooShortNumber(){
+        u1.setNumber("19284");
+        assertEquals(0,u1.getPhoneNumber().compareTo(phoneNumber));
     }
 
 }
